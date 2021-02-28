@@ -1,0 +1,14 @@
+class Solution {
+    
+     public int[] twoSum(int[] nums, int target) {
+        Map<Integer, Integer> storedNumber = new HashMap<>();
+        for (int i = 0; i < nums.length; i++){
+            int difference = target - nums[i];
+            if (storedNumber.containsKey(difference)){
+                return new int[] {storedNumber.get(difference), i}; 
+            }
+            storedNumber.put(nums[i], i);   
+        }
+        throw new IllegalArgumentException ("Sorry, there's no such answer!");     
+    }
+}
